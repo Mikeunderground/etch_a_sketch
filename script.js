@@ -6,6 +6,19 @@ const reset = document.getElementById('reset');
 // event Listern for button call button that calls resetbutton() which rests grid background color
 reset.addEventListener("click", resetButton)
 
+// Grab numbers and letters to generate color
+/*
+let hex = [0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,H];
+
+function randomColor(hex){
+    let random = Math.floor(Math.random()*16777215).toString(16);
+    console.log(random)
+
+    // call random 9 times to create a hex number for colors
+}
+*/
+
+
 // function creats a 256 tile grid. Run once upon page load.
 for(let i=0; i<256; i++){
     let div = document.createElement('div');
@@ -27,7 +40,10 @@ for(let i = 0; i < grids.length; i++) {
 
 // Changes the background color of tiles
 function colorChange(e){
-    e.target.style.backgroundColor = 'red';
+    let random = Math.floor(Math.random()*16777215).toString(16);
+    console.log(random)
+
+    e.target.style.backgroundColor = `#${random}`;
 }
 
 //reset.addEventListener('click', resetGrid())
